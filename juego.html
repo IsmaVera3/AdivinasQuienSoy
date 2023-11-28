@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adivina Quién</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="game-container">
+        <h1>¿Adivinaras Quién soy?</h1>
+
+        <label for="category">Selecciona una categoría:</label>
+        <h1><select id="category" onchange="loadImage()">  
+            <option value="futbolistas">Futbolistas</option>
+            <option value="musicos">Músicos</option>
+            <option value="equipos">Equipos</option>
+        </select></h1>
+        <h1>Escribe quien piensas que soy</h1>
+        <input type="text" id="guess" placeholder="Escribe tu respuesta">
+        <button onclick="checkGuess()">Verificar</button>
+        <p id="result"></p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
