@@ -8,21 +8,26 @@
 </head>
 <body>
     <div id="game-container">
-        <h1>¿Adivinaras Quién soy?</h1>
+        <h1>Adivina Quién</h1>
 
+        <img id="image" alt="Imagen" style="max-width: 500px; height: 300px; border: 1px solid #ccc; margin-top: 10px;">
         <label for="category">Selecciona una categoría:</label>
-        <h1><select id="category" onchange="loadImage()">  
+        <select id="category" onchange="loadImage()">
             <option value="futbolistas">Futbolistas</option>
             <option value="musicos">Músicos</option>
-            <option value="equipos">Equipos</option>
-        </select></h1>
-        <h1>Escribe quien piensas que soy</h1>
+            <!-- Agrega más opciones según sea necesario -->
+        </select>
+        <br>
+        <label for="pixelation">Intensidad de Pixelación:</label>
+        <input type="range" id="pixelation" min="1" max="10" value="10" onchange="adjustPixelation()">
+        <br>
+        <label for="guess">¿Quién es?</label>
         <input type="text" id="guess" placeholder="Escribe tu respuesta">
         <button onclick="checkGuess()">Verificar</button>
         <p id="result"></p>
+        <p id="points">Puntos: <span id="points-value">0</span></p>
     </div>
 
     <script src="script.js"></script>
 </body>
 </html>
-

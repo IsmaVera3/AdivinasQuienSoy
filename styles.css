@@ -52,3 +52,11 @@ button:hover {
     font-size: 18px;
     color: #333;
 }
+
+#image {
+    transition: filter 0.5s ease;
+}
+
+#image.pixelated {
+    filter: blur(0); /* El valor se ajustará dinámicamente con JavaScript */
+}
