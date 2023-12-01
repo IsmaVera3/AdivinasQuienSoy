@@ -21,13 +21,6 @@ function loadImage() {
     } else if (currentCategory === "musicos") {
         imageUrl = "https://i0.wp.com/elplanetaurbano.com/wp-content/uploads/2023/03/Drake.jpg?fit=1200%2C675&ssl=1";
     }
-    else{
-         // Carga la imagen aleatoria según la categoría
-         var randomIndex = Math.floor(Math.random() * categories[currentCategory].length);
-         var randomPerson = categories[currentCategory][randomIndex];
-         imageUrl = `images/${currentCategory}/${randomPerson}.jpg`;
-    }
- // Ajusta la ruta según tu estructura de carpetas
     
 
     displayImage(imageUrl);
