@@ -4,7 +4,7 @@ var points = 0;
 
 
 var categories = {
-    futbolistas: ["Messi", "Ronaldo", "Neymar", "Mbappé"],
+    futbolistas: ["Farre", "Ronaldo", "Neymar", "Mbappé"],
     musicos: ["Drake", "Ed Sheeran", "Shakira", "o"],
     hinchada: ["River", "Ed Sheeran", "Shakira", "ooo"]
 };
@@ -16,7 +16,7 @@ function loadImage() {
     var imageUrl;
 
     if (currentCategory === "futbolistas") {
-        imageUrl = "https://img.olympics.com/images/image/private/t_s_w960/t_s_16_9_g_auto/f_auto/primary/wq4l6w3ftzn6gequts2v";
+        imageUrl = "https://th.bing.com/th/id/OIP.QUyzB7WbuDg9KZY2RANbigHaFN?w=227&h=180&c=7&r=0&o=5&pid=1.7";
     } else if (currentCategory === "musicos") {
         imageUrl = "https://i0.wp.com/elplanetaurbano.com/wp-content/uploads/2023/03/Drake.jpg?fit=1200%2C675&ssl=1";
     } else if (currentCategory === "hinchada") {
