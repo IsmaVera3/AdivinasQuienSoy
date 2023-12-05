@@ -1,78 +1,71 @@
-var currentCategory = "futbolistas";
-var pixelationValue = 10;
+var CategoriaSelecta = "futbolistas";
+var valorPixelacion = 10;
 var points = 0;
 
-
-var categories = {
+var categorias = {
     futbolistas: ["Farre", "Ronaldo", "Neymar", "Mbappé"],
     musicos: ["Drake", "Ed Sheeran", "Shakira", "o"],
     hinchada: ["River", "Ed Sheeran", "Shakira", "ooo"]
 };
 
-function loadImage() {
-    var categorySelect = document.getElementById('category');
-    currentCategory = categorySelect.value;
+function CargarImg() {
+    var categoriaSelec = document.getElementById('category');
+    CategoriaSelecta = categoriaSelec.value;
 
-    var imageUrl;
+    var imagen;
 
-    if (currentCategory === "futbolistas") {
-        imageUrl = "https://th.bing.com/th/id/OIP.QUyzB7WbuDg9KZY2RANbigHaFN?w=227&h=180&c=7&r=0&o=5&pid=1.7";
-    } else if (currentCategory === "musicos") {
-        imageUrl = "https://i0.wp.com/elplanetaurbano.com/wp-content/uploads/2023/03/Drake.jpg?fit=1200%2C675&ssl=1";
-    } else if (currentCategory === "hinchada") {
-        imageUrl = "https://img.lagaceta.com.ar/fotos/notas/2019/10/12/a-la-b-equipo-river-futsal-perdio-categoria-como-ocurrio-2011-como-primer-equipo-821224-123100.jpg";
+    if (CategoriaSelecta === "futbolistas") {
+        imagen = "https://media.tycsports.com/files/2021/05/19/284008/guillermo-farre-belgrano_862x485.jpg?v=1";
+    } else if (CategoriaSelecta === "musicos") {
+        imagen = "https://i0.wp.com/elplanetaurbano.com/wp-content/uploads/2023/03/Drake.jpg?fit=1200%2C675&ssl=1";
+    } else if (CategoriaSelecta === "hinchada") {
+        imagen = "https://img.lagaceta.com.ar/fotos/notas/2019/10/12/a-la-b-equipo-river-futsal-perdio-categoria-como-ocurrio-2011-como-primer-equipo-821224-123100.jpg";
     }
 
-    displayImage(imageUrl);
+    displayImage(imagen);
 }
 
-function displayImage(imageUrl) {
-    var imageElement = document.getElementById('image');
-    imageElement.src = imageUrl;
+function displayImage(imagen) {
+    var imgPixelada = document.getElementById('image');
+    imgPixelada.src = imagen;
     adjustPixelation();
 }
 
 function adjustPixelation() {
     var pixelationInput = document.getElementById('pixelation');
-    pixelationValue = pixelationInput.value;
+    valorPixelacion = pixelationInput.value;
 
-    var imageElement = document.getElementById('image');
-    imageElement.classList.remove('pixelated');
-
-    setTimeout(function () {
-        imageElement.style.filter = `blur(${pixelationValue}px)`;
-    }, 100);
-
-    points = 100 - ((10 - pixelationValue) * 10);
+    var imgPixelada = document.getElementById('image');
+    imgPixelada.classList.remove('pixelated');
+    imgPixelada.style.filter = `blur(${valorPixelacion}px)`;
+    points = 100 - ((10 - valorPixelacion) * 10);
 
 }
 
 function pixelateImage() {
-    var imageElement = document.getElementById('image');
-    imageElement.classList.add('pixelated');
+    var imgPixelada = document.getElementById('image');
+    imgPixelada.classList.add('pixelated');
 }
 
-function checkGuess() {
-    var userInput = document.getElementById('guess').value.toLowerCase();
-    var correctAnswer = categories[currentCategory][0].toLowerCase();
-
+function Chequeo() {
+    var resUsuario = document.getElementById('guess').value.toLowerCase();
+    var resCorrecta = categorias[CategoriaSelecta][0].toLowerCase();
     var resultElement = document.getElementById('result');
 
-    if (userInput === correctAnswer) {
-        Swal.fire("Bien Hecho!", "Has completado una imagen", "ok");
-        points = points;
-        updatePoints();
-        var imageElement = document.getElementById('image');
-        imageElement.style.filter = 'blur(0)';
+    if (resUsuario === resCorrecta) {
+        Swal.fire("Bien Hecho!", "Has completado una imagen", "Siguiente Imagen");
+        cargarPuntos(points);
+        var imgPixelada = document.getElementById('image');
+        imgPixelada.style.filter = 'blur(0)';
     } else {
         resultElement.style.color = 'red';
         resultElement.textContent = 'Incorrecto. Inténtalo de nuevo.';
     }
 }
 
-function updatePoints() {
-    var pointsElement = document.getElementById('points-value');
-    pointsElement.textContent = points;
+function cargarPuntos(points) {
+    var puntosActualizados = document.getElementById('points-value');
+    puntosActualizados.textContent = points;
 }
 
-loadImage();
+CargarImg();
