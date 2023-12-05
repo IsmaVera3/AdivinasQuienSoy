@@ -15,16 +15,16 @@
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         <img id="image" alt="Imagen" style="max-width: 500px; height: 300px; border: 1px solid #ccc; margin-top: 10px;">
         <label for="category">Selecciona una categoría:</label>
-        <select id="category" onchange="loadImage()">
+        <select id="category" onchange="CargarImg()">
             <option value="futbolistas">Futbolistas</option>
             <option value="musicos">Músicos</option>
             <option value="hinchada">hinchada</option>
         </select>
-        <br><label for="pixelation">Intensidad de Pixelación:</label><br>
+        <label for="pixelation">Intensidad de Pixelación:</label>
         <input type="range" id="pixelation" min="1" max="10" value="10" onchange="adjustPixelation()">
         <label for="guess">¿Quién es?</label>
         <input type="text" id="guess" placeholder="Escribe tu respuesta">
-        <button onclick="checkGuess()">Verificar</button>
+        <button onclick="Chequeo()">Verificar</button>
         <p id="result"></p>
         <p id="points">Puntos: <span id="points-value">0</span></p>
     </div>
