@@ -58,5 +58,6 @@ button:hover {
 }
 
 #image.pixelated {
-    filter: blur(0); /* El valor se ajustará dinámicamente con JavaScript */
+    filter: blur(0);
+    /* El valor se ajustará dinámicamente con JavaScript */
 }
